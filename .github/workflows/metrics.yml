@@ -1,39 +1,34 @@
-name: Update ChemRxiv metrics
+name: Update Preprint Metrics
 
 on:
-  workflow_dispatch:
   schedule:
-    - cron: "23 8 * * *"
-
-permissions:
-  contents: write
+    # Runs every day at midnight UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allows you to run this manually from the Actions tab
 
 jobs:
-  update-metrics:
+  update-stats:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
 
-      - name: Install dependency
-        run: python -m pip install requests
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
 
-      - name: Fetch and validate metrics
-        run: python scripts/update_metrics.py
+    - name: Run metrics script
+      run: python update_metrics.py
 
-      - name: Commit updated metrics
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/chemrxiv-metrics.json
-          if git diff --cached --quiet; then
-            echo "No metrics changes to commit."
-          else
-            git commit -m "Update ChemRxiv usage metrics"
-            git push
-          fi
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "GitHub Actions Bot"
+        git config --global user.email "actions@github.com"
+        git add data/metrics.json
+        git diff-index --quiet HEAD || (git commit -m "Auto-update preprint view stats [skip ci]" && git push)
