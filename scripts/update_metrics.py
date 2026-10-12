@@ -2,34 +2,41 @@ import json
 import os
 import requests
 
-# Replace with your actual ChemRxiv DOI
+# Your exact ChemRxiv DOI
 DOI = "10.26434/chemrxiv.15002480"
 
 def fetch_metrics():
-    # Querying the public Altmetric API which aggregates real-time ChemRxiv counts
+    # CRITICAL: Note the precise format with a trailing slash and /v1/doi/
     url = f"https://altmetric.com{DOI}"
+    
+    print(f"Requesting data from: {url}")
     response = requests.get(url)
     
-    if response.status_status == 200:
+    if response.status_code == 200:
         data = response.json()
         
-        # Safely extract views, downloads, or alternative metric counts
+        # Pull data safely from the Altmetric attention registry
         metrics = {
             "doi": DOI,
-            "views": data.get("history", {}).get("total", 0),  # Example mapping
+            "views": data.get("history", {}).get("total", 0),  # Public tracking data
             "score": data.get("score", 0),
-            "updated_at": data.get("added_on", "")
+            "citations": data.get("cited_by_posts_count", 0)
         }
         
-        # Ensure the data directory exists
+        # Create data directory if it doesn't exist
         os.makedirs("data", exist_ok=True)
         
-        # Save to a static file that your GitHub page can access
+        # Write to static JSON inside your repo
         with open("data/metrics.json", "w") as f:
             json.dump(metrics, f, indent=4)
-        print("Metrics successfully updated!")
+        print("Success! metrics.json has been written.")
     else:
-        print(f"Failed to fetch metrics. Status code: {response.status_code}")
+        print(f"Failed to fetch metrics. API Status Code: {response.status_code}")
+        # Create a fallback placeholder file so your JavaScript doesn't break
+        os.makedirs("data", exist_ok=True)
+        fallback = {"doi": DOI, "views": "Verification pending", "score": 0, "citations": 0}
+        with open("data/metrics.json", "w") as f:
+            json.dump(fallback, f, indent=4)
 
 if __name__ == "__main__":
     fetch_metrics()
