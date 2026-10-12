@@ -24,7 +24,7 @@ jobs:
         pip install requests
 
     - name: Run metrics script
-      run: python update_metrics.py
+      run: python scripts/update_metrics.py
 
     - name: Commit and push changes
       run: |
