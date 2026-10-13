@@ -14,7 +14,7 @@ def fetch_metrics():
     }
     
     # Target endpoint utilizing the modern Open Engage platform structure
-    url = f"https://chemrxiv.org{PREPRINT_ID}"
+    url = f"https://chemrxiv.org/{PREPRINT_ID}"
     print(f"Contacting engine: {url}")
     
     # Establish a reliable static fallback based on your authentic verified dashboard metrics
