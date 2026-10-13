@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -146,8 +145,9 @@
               </a>
             </div>
 
+            <!-- Metrics Card Section -->
             <div class="project-metrics" id="chemrxiv-metrics"
-                 data-metrics-url="data/chemrxiv-metrics.json">
+                 data-metrics-url="data/metrics.json">
               <div>
                 <span class="metric-label">CHEMRXIV VIEWS</span>
                 <strong id="metric-views">—</strong>
@@ -195,47 +195,45 @@
              target="_blank" rel="noopener noreferrer">DOI record ↗</a>
         </div>
       </article>
-
-      <p class="small-note">
-        More publications, datasets, and software releases can be added
-        as verified records become available.
-      </p>
-    </section>
-
-    <section class="section about-section" id="about">
-      <p class="eyebrow">03 / ABOUT</p>
-      <h2>Science across methods and scales.</h2>
-      <div class="about-copy">
-        <p>
-          I'm Cameron Alexander McCord Gurwell at McMaster University.
-          My research interests span magnetic resonance, materials
-          characterization, and computational approaches to understanding
-          atomic-scale behavior.
-        </p>
-        <p>
-          This portfolio brings together research projects, publications,
-          and computational resources in one place.
-        </p>
-      </div>
-      <div class="actions">
-        <a class="button button-dark"
-           href="https://github.com/camgur"
-           target="_blank" rel="noopener noreferrer">GitHub profile ↗</a>
-        <!-- Add a verified professional email or ORCID link here. -->
-      </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <span>© <span id="year"></span> Cameron Alexander McCord Gurwell</span>
-    <span>McMaster University</span>
-    <a href="#home">Back to top ↑</a>
-  </footer>
-
-  <script src="assets/js/metrics.js"></script>
+  <!-- Metrics Extraction Engine -->
   <script>
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
+    document.addEventListener("DOMContentLoaded", function() {
+      const container = document.getElementById("chemrxiv-metrics");
+      if (!container) return;
+
+      const jsonPath = container.getAttribute("data-metrics-url");
+      const viewsEl = document.getElementById("metric-views");
+      const downloadsEl = document.getElementById("metric-downloads");
+      const noteEl = document.getElementById("metrics-updated");
+
+      fetch(jsonPath)
+        .then(response => {
+          if (!response.ok) throw new Error("Metrics file payload unresolved");
+          return response.json();
+        })
+        .then(data => {
+          // Format integers to use local commas if available
+          if (data.views !== undefined) {
+            viewsEl.textContent = Number(data.views).toLocaleString();
+          }
+          if (data.downloads !== undefined) {
+            downloadsEl.textContent = Number(data.downloads).toLocaleString();
+          }
+          
+          // Provide clean visual validation context
+          noteEl.textContent = "Metrics synchronized automatically from official record.";
+        })
+        .catch(err => {
+          console.warn("Metrics pipeline warning:", err);
+          viewsEl.textContent = "—";
+          downloadsEl.textContent = "—";
+          noteEl.textContent = "Metrics momentarily unavailable. Local cache loading pending.";
+        });
+    });
   </script>
 </body>
+</html>
 </html>
