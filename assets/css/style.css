@@ -94,12 +94,18 @@ h1, h2 {
   text-transform: uppercase;
 }
 
+.hero .eyebrow,
+.hero-copy,
+.hero-note {
+  text-shadow: 0 0 8px rgba(255, 255, 255, .78);
+}
+
 .hero {
   min-height: 580px;
   padding: 88px 0 92px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
-  align-items: center;
+  align-items: start;
   gap: clamp(42px, 7vw, 96px);
 }
 
@@ -120,7 +126,7 @@ h1, h2 {
 }
 
 .hero-portrait {
-  margin: 0;
+  margin: clamp(42px, 5vw, 52px) 0 0;
   padding: 9px 9px 14px;
   background: white;
   border: 1px solid #b8d2d2;
@@ -146,9 +152,12 @@ h1, h2 {
 
 .hero-copy {
   max-width: 670px;
+  margin: clamp(20px, 3vw, 32px) 0;
   color: var(--muted);
   font-size: 18px;
   line-height: 1.65;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .actions {
@@ -550,6 +559,8 @@ h2 {
   padding: 0 0 18px;
   color: var(--muted);
   font-size: 14px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* About and footer */
@@ -645,6 +656,7 @@ h2 {
   .hero-portrait {
     order: -1;
     width: min(100%, 290px);
+    margin-top: 0;
   }
 }
 
