@@ -2,12 +2,12 @@ import json
 import os
 import requests
 
-# Your exact ChemRxiv DOI
-DOI = "10.26434/chemrxiv.15002480"
+# Your specific ChemRxiv preprint ID
+PREPRINT_ID = "15002480"
 
 def fetch_metrics():
-    # CRITICAL: Note the precise format with a trailing slash and /v1/doi/
-    url = f"https://altmetric.com{DOI}"
+    # Querying the official ChemRxiv API directly for your preprint item
+    url = f"https://chemrxiv.org{PREPRINT_ID}"
     
     print(f"Requesting data from: {url}")
     response = requests.get(url)
@@ -15,26 +15,23 @@ def fetch_metrics():
     if response.status_code == 200:
         data = response.json()
         
-        # Pull data safely from the Altmetric attention registry
+        # ChemRxiv groups metrics under public article details
         metrics = {
-            "doi": DOI,
-            "views": data.get("history", {}).get("total", 0),  # Public tracking data
-            "score": data.get("score", 0),
-            "citations": data.get("cited_by_posts_count", 0)
+            "id": PREPRINT_ID,
+            "views": data.get("public_views", 0),
+            "downloads": data.get("public_downloads", 0),
+            "doi": data.get("doi", "10.26434/chemrxiv.15002480")
         }
         
-        # Create data directory if it doesn't exist
         os.makedirs("data", exist_ok=True)
-        
-        # Write to static JSON inside your repo
         with open("data/metrics.json", "w") as f:
             json.dump(metrics, f, indent=4)
-        print("Success! metrics.json has been written.")
+        print(f"Success! Views: {metrics['views']}, Downloads: {metrics['downloads']}")
     else:
         print(f"Failed to fetch metrics. API Status Code: {response.status_code}")
-        # Create a fallback placeholder file so your JavaScript doesn't break
+        # Safeguard fallback file so your index.html page renders gracefully
         os.makedirs("data", exist_ok=True)
-        fallback = {"doi": DOI, "views": "Verification pending", "score": 0, "citations": 0}
+        fallback = {"id": PREPRINT_ID, "views": "Verification pending", "downloads": "Verification pending"}
         with open("data/metrics.json", "w") as f:
             json.dump(fallback, f, indent=4)
 
