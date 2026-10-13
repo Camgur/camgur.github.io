@@ -10,39 +10,62 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="wordmark" href="#home">CAMERON GURWELL<span>.</span></a>
+    <a class="wordmark" href="#home">CAMERON A. GURWELL<span>.</span></a>
     <nav aria-label="Main navigation">
+      <a href="#about">About</a>
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
-      <a href="#about">About</a>
       <a href="https://github.com/camgur" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
     </nav>
   </header>
 
   <main id="home">
     <section class="hero">
-      <p class="eyebrow">RESEARCH · SPECTROSCOPY · COMPUTATIONAL MATERIALS</p>
-      <h1>Understanding materials<br>from <em>atoms to applications.</em></h1>
-      <p class="hero-copy">
-        I'm Cameron Alexander McCord Gurwell, a researcher at McMaster
-        University interested in solid-state NMR spectroscopy, battery
-        materials, MRI, and machine-learning approaches to atomistic modeling.
-      </p>
-      <div class="actions">
-        <a class="button button-dark" href="#research">Explore my research ↓</a>
-        <a class="text-link" href="#publications">Selected publications →</a>
+      <div class="hero-content" id="about">
+        <p class="eyebrow">RESEARCH · SPECTROSCOPY · COMPUTATIONAL MATERIALS</p>
+        <h1 class="sr-only">Understanding materials from atoms to applications.</h1>
+        <p class="hero-copy">
+          I'm Cameron Alexander McCord Gurwell, a researcher at McMaster
+          University interested in solid-state NMR spectroscopy, battery
+          materials, MRI, and machine-learning approaches to atomistic modeling.
+        </p>
+        <div class="contact-actions" aria-label="Contact and professional links">
+          <a class="contact-email" href="mailto:gurwellc@mcmaster.ca">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 5h18v14H3zM3 6l9 7 9-7" /></svg>
+            <span>gurwellc@mcmaster.ca</span>
+          </a>
+          <a class="contact-email" href="mailto:camgurwell@gmail.com">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 5h18v14H3zM3 6l9 7 9-7" /></svg>
+            <span>camgurwell@gmail.com</span>
+          </a>
+          <a class="icon-button" href="https://www.linkedin.com/in/cameron-gurwell-17a83b278/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" title="LinkedIn profile">
+            <img src="assets/linkedin.png" alt="">
+            <span>LinkedIn</span>
+          </a>
+          <a class="icon-button" href="https://www.researchgate.net/profile/Cameron-Gurwell" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate profile" title="ResearchGate profile">
+            <img src="assets/researchgate.png" alt="">
+            <span>ResearchGate</span>
+          </a>
+        </div>
+        <div class="actions">
+          <a class="button button-dark" href="#research">Explore my research ↓</a>
+          <a class="text-link" href="#publications">Selected publications →</a>
+        </div>
+        <div class="hero-note">
+          <span class="status-dot"></span>
+          <span>McMaster University · Research portfolio</span>
+        </div>
       </div>
-      <div class="hero-note">
-        <span class="status-dot"></span>
-        <span>McMaster University · Research portfolio</span>
-      </div>
+      <figure class="hero-portrait">
+        <img src="assets/id.png" alt="Portrait of Cameron Alexander McCord Gurwell">
+        <figcaption>Materials research · McMaster University</figcaption>
+      </figure>
     </section>
 
     <section class="section" id="research">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">01 / RESEARCH</p>
-          <h2>Questions across disciplines.</h2>
+          <h2>Research</h2>
         </div>
         <p class="small-note">Select a project to explore more.</p>
       </div>
@@ -62,6 +85,10 @@
             <span class="expand-icon" aria-hidden="true">+</span>
           </summary>
           <div class="project-details">
+            <figure class="research-figure">
+              <img src="assets/figures/nmr-spectrum.svg" alt="Stylized solid-state NMR spectrum with resonance peaks">
+              <figcaption>Local chemical environments expressed as resonance signals.</figcaption>
+            </figure>
             <h3>Research overview</h3>
             <p>
               Solid-state nuclear magnetic resonance (ssNMR) provides a
@@ -97,6 +124,10 @@
             <span class="expand-icon" aria-hidden="true">+</span>
           </summary>
           <div class="project-details">
+            <figure class="research-figure">
+              <img src="assets/figures/mri-slice.svg" alt="Stylized magnetic resonance imaging slice with signal contours">
+              <figcaption>Magnetic resonance measurements translated into spatial information.</figcaption>
+            </figure>
             <h3>Research overview</h3>
             <p>
               Magnetic resonance imaging connects physical measurements
@@ -131,6 +162,10 @@
             <span class="expand-icon" aria-hidden="true">+</span>
           </summary>
           <div class="project-details">
+            <figure class="research-figure">
+              <img src="assets/figures/ml-potential.svg" alt="Stylized atomistic machine-learning potential with connected atoms">
+              <figcaption>Learning energy landscapes from atomic configurations.</figcaption>
+            </figure>
             <h3>Research overview</h3>
             <p>
               Universal machine-learning interatomic potentials (uMLIPs)
@@ -145,22 +180,6 @@
               </a>
             </div>
 
-            <!-- Metrics Card Section -->
-            <div class="project-metrics" id="chemrxiv-metrics"
-                 data-metrics-url="data/metrics.json">
-              <div>
-                <span class="metric-label">CHEMRXIV VIEWS</span>
-                <strong id="metric-views">—</strong>
-              </div>
-              <div>
-                <span class="metric-label">CHEMRXIV DOWNLOADS</span>
-                <strong id="metric-downloads">—</strong>
-              </div>
-              <p class="metrics-note" id="metrics-updated" aria-live="polite">
-                Metrics awaiting verification against ChemRxiv.
-              </p>
-            </div>
-
             <p class="small-note">
               Additional details can cover the model, datasets, benchmarks,
               findings, and associated code repositories.
@@ -173,73 +192,73 @@
     <section class="section publication-section" id="publications">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">02 / PUBLICATIONS</p>
-          <h2>Research, in the record.</h2>
+          <h2>Publications</h2>
         </div>
       </div>
 
       <article class="publication">
         <div class="publication-meta">
-          <span class="eyebrow">PREPRINT</span>
-          <span class="pill">ChemRxiv · Version 1</span>
+          <span class="eyebrow">JOURNAL ARTICLE</span>
+          <span class="pill">Inorganic Chemistry · 2025</span>
         </div>
-        <h3>Universal machine-learning interatomic potentials</h3>
-        <p>
-          Current uMLIPs project. See the source record for the exact
-          title, full author list, abstract, and publication details.
+        <h3>Revealing Na<sup>+</sup> Dynamics in the Na<sub>4</sub>Sn<sub>2</sub>Ge<sub>5</sub>O<sub>16</sub> Solid Electrolyte Material Using <sup>23</sup>Na Solid-State NMR Spectroscopy and Computational Methods</h3>
+        <p class="author-list">
+          <span class="author-with-orcid">Mengyang Cui <a class="orcid-button" href="https://orcid.org/0000-0002-7357-9784" target="_blank" rel="noopener noreferrer" aria-label="Mengyang Cui ORCID"><img src="assets/orcid.svg" alt=""><span>ORCID</span></a></span> ·
+          <span class="author-with-orcid">Cameron A. Gurwell <a class="orcid-button" href="https://orcid.org/0009-0008-3187-3855" target="_blank" rel="noopener noreferrer" aria-label="Cameron A. Gurwell ORCID"><img src="assets/orcid.svg" alt=""><span>ORCID</span></a></span> ·
+          <span class="author-with-orcid">Darren H. Brouwer <a class="orcid-button" href="https://orcid.org/0000-0003-4169-4478" target="_blank" rel="noopener noreferrer" aria-label="Darren H. Brouwer ORCID"><img src="assets/orcid.svg" alt=""><span>ORCID</span></a></span> ·
+          <span class="author-with-orcid">Kevin J. Sanders <a class="orcid-button" href="https://orcid.org/0000-0001-7240-4918" target="_blank" rel="noopener noreferrer" aria-label="Kevin J. Sanders ORCID"><img src="assets/orcid.svg" alt=""><span>ORCID</span></a></span> ·
+          <span class="author-with-orcid">Yurij Mozharivskyj <a class="orcid-button" href="https://orcid.org/0000-0003-4498-5545" target="_blank" rel="noopener noreferrer" aria-label="Yurij Mozharivskyj ORCID"><img src="assets/orcid.svg" alt=""><span>ORCID</span></a></span> ·
+          <span class="author-with-orcid">Gillian R. Goward <a class="orcid-button" href="https://orcid.org/0000-0002-7489-3329" target="_blank" rel="noopener noreferrer" aria-label="Gillian R. Goward ORCID"><img src="assets/orcid.svg" alt=""><span>ORCID</span></a></span>
         </p>
+        <details class="abstract-details">
+          <summary>Abstract</summary>
+          <figure class="toc-figure">
+            <img src="assets/figures/sodium-toc.jpeg" alt="Table of contents graphic showing sodium NMR spectra and the Na4Sn2Ge5O16 structure">
+            <figcaption>Sodium NMR and structural dynamics in the solid electrolyte.</figcaption>
+          </figure>
+          <p>
+            Na<sub>4</sub>Sn<sub>2</sub>Ge<sub>5</sub>O<sub>16</sub> is a novel Na<sup>+</sup> conductor that can be utilized in the next generation of all-solid-state Na<sup>+</sup> batteries (ASSNIBs). <sup>23</sup>Na ssNMR experiments were carried out on the Na<sub>4</sub>Sn<sub>2</sub>Ge<sub>5</sub>O<sub>16</sub> phase to investigate the Na<sup>+</sup> dynamics for the three unique crystallographic Na sites under multiple field strengths (20, 11.7, and 7 T). However, completely resolving the fast exchange Na2 and Na3 pair (4c sites) in the <sup>23</sup>Na NMR spectra (Na2–3 resonance) was nontrivial under the available experimental conditions. The subsequent relaxation study supports that the Na2–3 peaks are dynamically mediated, in contrast to immobile Na1 peaks. To further understand the dynamic effects on the <sup>23</sup>Na NMR spectra, 1D and 2D 3QMAS <sup>23</sup>Na spectra under various magnetic field strengths were analyzed to establish possible ranges of “averaged” quadrupolar parameter values for the two sites. With the assistance of density functional theory (DFT)-based CASTEP calculations, simulated lineshapes of the Na1 site (8d) are established, which exhibit excellent agreement with the experimentally determined ones. Subsequently, the EXchange Program for RElaxing Spin Systems (EXPRESS) script was employed to simulate the Na2–3 peaks under dynamic conditions, with a final estimated exchange rate of 2 × 10<sup>5</sup> Hz. This work paves the way for future studies of Na<sup>+</sup> transport at the molecular level in fast-conducting Na-based solid electrolytes (SEs).
+          </p>
+        </details>
+        <div class="project-links">
+          <a href="https://doi.org/10.1021/acs.inorgchem.5c02381"
+             target="_blank" rel="noopener noreferrer">Read article ↗</a>
+        </div>
+      </article>
+
+      <article class="publication">
+        <div class="publication-meta">
+          <span class="eyebrow">PREPRINT</span>
+          <span class="pill">ChemRxiv · April 2026</span>
+        </div>
+        <h3>Experimental Validation of Universal Machine Learning Interatomic Potentials for Lithium-Ion Dynamics in Solid Electrolytes via <sup>7</sup>Li NMR</h3>
+        <p class="author-list">
+          <span class="author-with-orcid">Cameron A. Gurwell <a class="orcid-button" href="https://orcid.org/0009-0008-3187-3855" target="_blank" rel="noopener noreferrer" aria-label="Cameron A. Gurwell ORCID"><img src="assets/orcid.svg" alt=""><span>ORCID</span></a></span> ·
+          <span class="author-with-orcid">Taiana L. E. Pereira <a class="orcid-button" href="https://orcid.org/0000-0001-6116-7152" target="_blank" rel="noopener noreferrer" aria-label="Taiana L. E. Pereira ORCID"><img src="assets/orcid.svg" alt=""><span>ORCID</span></a></span> ·
+          <span class="author-with-orcid">Mengyang Cui <a class="orcid-button" href="https://orcid.org/0000-0002-7357-9784" target="_blank" rel="noopener noreferrer" aria-label="Mengyang Cui ORCID"><img src="assets/orcid.svg" alt=""><span>ORCID</span></a></span> ·
+          <span class="author-with-orcid">Carlos A. Martins Junior <a class="orcid-button" href="https://orcid.org/0000-0001-6800-8533" target="_blank" rel="noopener noreferrer" aria-label="Carlos A. Martins Junior ORCID"><img src="assets/orcid.svg" alt=""><span>ORCID</span></a></span> ·
+          <span class="author-with-orcid">Gillian R. Goward <a class="orcid-button" href="https://orcid.org/0000-0002-7489-3329" target="_blank" rel="noopener noreferrer" aria-label="Gillian R. Goward ORCID"><img src="assets/orcid.svg" alt=""><span>ORCID</span></a></span> ·
+          <span class="author-with-orcid">Rodrigo A. Vargas-Hernández <a class="orcid-button" href="https://orcid.org/0000-0002-5559-6521" target="_blank" rel="noopener noreferrer" aria-label="Rodrigo A. Vargas-Hernández ORCID"><img src="assets/orcid.svg" alt=""><span>ORCID</span></a></span>
+        </p>
+        <details class="abstract-details">
+          <summary>Abstract</summary>
+          <figure class="toc-figure">
+            <img src="assets/figures/uMLIPs-toc.png" alt="Table of contents graphic showing a solid electrolyte structure and machine-learning energy plots">
+            <figcaption>Machine-learning potentials benchmarked against lithium-ion dynamics.</figcaption>
+          </figure>
+          <p>
+            A significant step toward electrification is the adoption of more sustainable energy storage technologies such as batteries. Safer alternatives to conventional solution-state lithium-ion batteries (LIBs) are solid-state batteries, which employ solid-state electrolytes (SSEs). These SSEs can exhibit lithium conductivities comparable to those of liquid electrolytes but are often discovered through experimental trial and error. Computational pipelines powered by universal machine-learning interatomic potentials (uMLIPs) offer a cheaper and scalable route to screen large datasets of candidate SSEs. This recent class of models enables rapid materials exploration compared to traditional quantum chemistry methods and ab initio molecular dynamics (AIMD). In this work, we assess the current capabilities of uMLIPs for solid-state lithium battery applications by systematically benchmarking their predictions against experimental solid-state nuclear magnetic resonance (ssNMR) diffusion data and density functional theory (DFT) calculations. We considered twelve different Li-based compounds, five ordered electrolytes, three disordered electrolytes, and four cathodes. This study includes eighteen different uMLIPs categorized into four main families, CHGNet, M3GNet, MACE, and ORB. Our results demonstrate that model performance is strongly dependent on both the underlying architecture and the chemical system under investigation. MACE- and ORB-based models consistently achieve higher accuracy across structural, energetic, and diffusion-related properties. However, the reliability of lithium diffusion predictions remains system-dependent, highlighting current limitations in the transferability of uMLIPs for complex materials. These findings provide a critical assessment of the readiness of uMLIPs for integration into computational pipelines aimed at accelerating the discovery of next-generation solid-state battery materials.
+          </p>
+        </details>
         <div class="project-links">
           <a href="https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002480/v1"
              target="_blank" rel="noopener noreferrer">Read preprint ↗</a>
-          <a href="https://doi.org/10.26434/chemrxiv.15002480"
+          <a href="https://doi.org/10.26434/chemrxiv.15002480/v1"
              target="_blank" rel="noopener noreferrer">DOI record ↗</a>
         </div>
       </article>
     </section>
   </main>
 
-  <!-- Metrics Extraction Engine -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const container = document.getElementById("chemrxiv-metrics");
-      if (!container) return;
-
-      const jsonPath = container.getAttribute("data-metrics-url");
-      const viewsEl = document.getElementById("metric-views");
-      const downloadsEl = document.getElementById("metric-downloads");
-      const noteEl = document.getElementById("metrics-updated");
-
-      fetch(jsonPath)
-        .then(response => {
-          if (!response.ok) throw new Error("Metrics file payload unresolved");
-          return response.json();
-        })
-        .then(data => {
-          // Format integers to use local commas if available
-          if (data.views !== undefined) {
-            viewsEl.textContent = Number(data.views).toLocaleString();
-          }
-          if (data.downloads !== undefined) {
-            downloadsEl.textContent = Number(data.downloads).toLocaleString();
-          }
-          
-          // Provide clean visual validation context
-          noteEl.textContent = "Metrics synchronized automatically from official record.";
-        })
-        .catch(err => {
-          console.warn("Metrics pipeline warning:", err);
-          viewsEl.textContent = "—";
-          downloadsEl.textContent = "—";
-          noteEl.textContent = "Metrics momentarily unavailable. Local cache loading pending.";
-        });
-    });
-  </script>
-    <script async src="https://dimensions.ai" charset="utf-8"></script>
-
-    <div class="__dimensions_badge_embed__" 
-         data-doi="10.26434/chemrxiv.15002480" 
-         data-style="small_circle">
-    </div>
 </body>
-</html>
 </html>

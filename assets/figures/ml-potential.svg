@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" role="img" aria-labelledby="title desc">
+  <title id="title">Stylized atomistic machine-learning potential</title>
+  <desc id="desc">Connected atoms on a blue-green energy landscape grid.</desc>
+  <rect width="760" height="300" fill="#eaf4f3"/>
+  <path d="M76 226 C159 164 215 193 280 131 S396 73 469 132 S587 214 684 75" fill="none" stroke="#b7d9d5" stroke-width="2"/>
+  <g stroke="#9fc7c6" stroke-width="1" opacity=".75">
+    <path d="M76 226L684 75M76 257L684 106M76 195L684 44M76 164L684 13"/>
+    <path d="M76 226L76 257M177 201L177 232M278 176L278 207M379 151L379 182M480 126L480 157M581 101L581 132M684 75L684 106"/>
+  </g>
+  <g stroke="#174e67" stroke-width="4" fill="#9ed8bd">
+    <path d="M162 165L263 142L364 103L466 143L568 98" fill="none"/>
+    <circle cx="162" cy="165" r="15"/><circle cx="263" cy="142" r="11"/><circle cx="364" cy="103" r="17"/><circle cx="466" cy="143" r="12"/><circle cx="568" cy="98" r="15"/>
+  </g>
+  <g fill="#124b61" font-family="Arial, sans-serif" font-size="14"><text x="24" y="28">learned energy surface</text><text x="608" y="278">atomic configuration</text></g>
+</svg>

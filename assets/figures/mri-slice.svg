@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" role="img" aria-labelledby="title desc">
+  <title id="title">Stylized magnetic resonance imaging slice</title>
+  <desc id="desc">A teal and blue circular imaging slice with layered signal contours.</desc>
+  <rect width="760" height="300" fill="#eaf4f3"/>
+  <g transform="translate(380 150)">
+    <circle r="112" fill="#123f52"/>
+    <circle r="96" fill="#2d7f85"/>
+    <path d="M-72-26 C-49-82 30-83 68-42 C95-13 77 61 24 78 C-34 96-89 54-72-26Z" fill="#9ed8bd"/>
+    <path d="M-45-17 C-26-57 27-61 49-29 C67-4 53 38 19 50 C-19 64-58 39-45-17Z" fill="#174e67"/>
+    <ellipse cx="-17" cy="-6" rx="22" ry="29" fill="#bce7d0"/>
+    <ellipse cx="29" cy="21" rx="16" ry="25" fill="#5fb99b"/>
+    <path d="M-100 0H100M0-100V100" stroke="#d9f3e7" stroke-opacity=".55" stroke-dasharray="4 7"/>
+    <circle r="116" fill="none" stroke="#73c3a4" stroke-width="2"/>
+  </g>
+  <g fill="#52747b" font-family="Arial, sans-serif" font-size="14"><text x="24" y="28">signal intensity</text><text x="620" y="278">slice 07 / 24</text></g>
+</svg>
