@@ -7,7 +7,7 @@ PREPRINT_ID = "15002480"
 
 def fetch_metrics():
     # Querying the official ChemRxiv API directly for your preprint item
-    url = f"https://chemrxiv.org{PREPRINT_ID}"
+    url = f"https://chemrxiv.org/{PREPRINT_ID}"
     
     print(f"Requesting data from: {url}")
     response = requests.get(url)
