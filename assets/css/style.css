@@ -21,11 +21,12 @@ body {
   margin: 0;
   color: var(--ink);
   background-color: var(--paper);
-  background-image: linear-gradient(rgba(243, 247, 245, .9), rgba(243, 247, 245, .94)), url("../background.png");
+  background-image: linear-gradient(rgba(243, 247, 245, .93), rgba(243, 247, 245, .96)), url("../background.png");
   background-position: center top;
   background-size: cover;
   background-attachment: fixed;
   font: 16px/1.7 var(--sans);
+  text-shadow: 0 1px 1px rgba(255, 255, 255, .62);
 }
 
 a { color: inherit; }
