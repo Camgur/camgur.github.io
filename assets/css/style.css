@@ -312,6 +312,7 @@ h2 {
 }
 
 .project summary {
+  display: grid;
   grid-template-columns: 42px minmax(0, 1fr) 28px;
   gap: 18px;
   align-items: start;
