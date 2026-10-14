@@ -815,7 +815,11 @@ h2 {
 }
 
 @media (max-width: 760px) {
-  body { background-attachment: scroll; }
+  body {
+    background-attachment: scroll;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+  }
 
   .site-header {
     align-items: flex-start;
