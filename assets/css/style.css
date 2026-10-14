@@ -356,6 +356,8 @@ h2 {
   color: var(--muted);
   font-size: 16px;
   text-shadow: 0 0 6px rgba(255, 255, 255, .9);
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .expand-icon {
@@ -394,6 +396,8 @@ h2 {
   color: #566159;
   font-size: 16px;
   text-shadow: 0 0 6px rgba(255, 255, 255, .9);
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .project-details li { padding: 3px 0; }
