@@ -100,10 +100,16 @@
             <span class="expand-icon" aria-hidden="true">+</span>
           </summary>
           <div class="project-details">
-            <figure class="research-figure">
-              <img src="assets/figures/mri-slice.svg" alt="Stylized magnetic resonance imaging slice with signal contours">
-              <figcaption>Magnetic resonance measurements translated into spatial information.</figcaption>
-            </figure>
+            <div class="research-gallery mri-gallery">
+              <figure class="research-figure">
+                <img src="assets/figures/lithium-images.png" alt="MRI images showing lithium-containing phantoms and battery-relevant signal distributions">
+                <figcaption>Spatially resolved lithium MRI measurements across phantom and imaging conditions.</figcaption>
+              </figure>
+              <figure class="research-figure">
+                <img src="assets/figures/li-phantom.jpg" alt="Experimental lithium MRI phantom and resonator assembly">
+                <figcaption>Experimental setup for direct lithium imaging.</figcaption>
+              </figure>
+            </div>
             <h3>Research overview</h3>
             <p>
               Magnetic resonance imaging provides spatial context for
@@ -132,6 +138,15 @@
               <li>Rapid MRI for <em>in situ</em> and <em>operando</em> studies</li>
               <li>Sampling and reconstruction for dynamic battery imaging</li>
             </ul>
+            <h3>Research direction</h3>
+            <p>
+              The direction of this work is to develop MRI methods that move
+              from sensitive detection toward faster, more quantitative imaging
+              of working batteries. By combining UTE and selective excitation
+              with rapid acquisition, sampling, and reconstruction, the aim is
+              to resolve lithium redistribution and interfacial evolution across
+              useful spatial and temporal scales during operation.
+            </p>
             <p class="small-note">
               Current work spans lithium-metal phantoms, foils, and functional
               cells, with an emphasis on improving sensitivity, spatial fidelity,
@@ -154,27 +169,70 @@
             <span class="expand-icon" aria-hidden="true">+</span>
           </summary>
           <div class="project-details">
-            <figure class="research-figure">
-              <img src="assets/figures/nmr-spectrum.svg" alt="Stylized solid-state NMR spectrum with resonance peaks">
-              <figcaption>Local chemical environments expressed as resonance signals.</figcaption>
-            </figure>
+            <div class="research-gallery">
+              <figure class="research-figure research-figure-wide">
+                <img src="assets/figures/sodium_pos_mod.png" alt="Sodium electrolyte structures and simulated NMR spectra">
+                <figcaption>Structure, dynamics, and simulated spectra in sodium electrolytes.</figcaption>
+              </figure>
+              <div class="research-subgallery">
+                <figure class="research-figure spectrum-figure">
+                  <img src="assets/figures/19F_bab_s1_label.png" alt="Fluorine BABA two-dimensional NMR correlation spectrum for the first variant of a doped electrolyte">
+                  <figcaption><sup>19</sup>F BABA spectrum, material variant 1.</figcaption>
+                </figure>
+                <figure class="research-figure spectrum-figure">
+                  <img src="assets/figures/19F_bab_s2_label.png" alt="Fluorine BABA two-dimensional NMR correlation spectrum for the second variant of a doped electrolyte">
+                  <figcaption><sup>19</sup>F BABA spectrum, material variant 2.</figcaption>
+                </figure>
+              </div>
+            </div>
             <h3>Research overview</h3>
             <p>
               Solid-state nuclear magnetic resonance (ssNMR) provides a
-              local probe of chemical environments in complex solids.
-              This research area focuses on using NMR spectroscopy to
-              investigate battery materials, local structure, and changes
-              associated with electrochemical processes.
+              site-specific view of local structure, chemical environments,
+              and ion motion in complex battery materials. In fast-conducting
+              sodium electrolytes, multinuclear and variable-field
+              <sup>23</sup>Na ssNMR can distinguish immobile sites from rapidly
+              exchanging environments, combining relaxation measurements,
+              3QMAS spectra, and simulated lineshapes to resolve the mechanisms
+              of sodium transport.
+            </p>
+            <p>
+              Related work on fluorine-doped lithium oxychlorides combines
+              <sup>7</sup>Li and <sup>19</sup>F MAS NMR with 2D BABA correlation
+              experiments and relaxometry. These measurements reveal how
+              dopant environments influence local lithium mobility, providing
+              structural information that complements diffraction and helps
+              connect atomic-scale disorder with ionic conductivity. Temperature-dependent 
+              T<sub>1</sub> measurements can be analyzed through
+              Arrhenius behavior to estimate activation energies for local ion
+              motion. Where relevant, pulsed-field-gradient (PFG) NMR provides
+              a complementary measure of translational self-diffusion through
+              gradient-dependent signal attenuation and diffusion coefficients.
+              Together, these approaches use spectroscopy and computation to
+              understand how local environments govern transport in solid
+              electrolytes.
             </p>
             <h3>Research themes</h3>
             <ul>
-              <li>Local atomic structure and chemical environments</li>
-              <li>NMR characterization of battery materials</li>
-              <li>Structural changes during electrochemical processes</li>
+              <li>Multinuclear MAS and 2D correlation NMR</li>
+              <li>Temperature-dependent <em>T</em><sub>1</sub> and activation energies</li>
+              <li>PFG NMR and translational self-diffusion</li>
+              <li>Simulation-guided links between structure and conductivity</li>
             </ul>
+            <h3>Research direction</h3>
+            <p>
+              The broader goal is to connect local chemistry with transport
+              across multiple length scales. In battery systems, ssNMR and MRI
+              provide complementary views: ssNMR resolves local environments,
+              exchange, and mobility, while MRI maps lithium distribution and
+              interfacial microstructure within intact cells. Together, they
+              can relate spatially resolved changes under electrochemical or
+              mechanical conditions to the underlying ion-transport mechanisms.
+            </p>
             <p class="small-note">
-              Specific nuclei, techniques, battery chemistries, results,
-              and publications can be added here.
+              Applications span fast sodium conductors and doped lithium
+              oxychloride electrolytes, as well as spatially resolved studies
+              of working lithium-metal cells.
             </p>
           </div>
         </details>
@@ -194,15 +252,25 @@
           </summary>
           <div class="project-details">
             <figure class="research-figure">
-              <img src="assets/figures/ml-potential.svg" alt="Stylized atomistic machine-learning potential with connected atoms">
-              <figcaption>Learning energy landscapes from atomic configurations.</figcaption>
+              <img src="assets/figures/uMLIPs-structures.png" alt="Structures of lithium-based solid electrolytes and cathode materials used in uMLIP benchmarking">
+              <figcaption>Representative lithium materials used for universal potential benchmarking.</figcaption>
             </figure>
             <h3>Research overview</h3>
             <p>
-              Universal machine-learning interatomic potentials (uMLIPs)
-              aim to support atomistic modeling across diverse chemical
-              environments. My current project investigates this area;
-              the linked preprint provides the primary record of the work.
+              Universal machine-learning interatomic potentials (uMLIPs) offer
+              a scalable route to screen solid-state electrolytes for safer,
+              higher-energy-density batteries. This work benchmarks eighteen
+              models from the CHGNet, M3GNet, MACE, and ORB families across
+              fifteen lithium-based compounds, including ordered and disordered
+              electrolytes and cathodes.
+            </p>
+            <p>
+              The central comparison uses lithium-ion diffusion data from
+              molecular dynamics and experimental <sup>7</sup>Li pulsed-field-gradient 
+              NMR (PFG-NMR). Temperature-dependent diffusion
+              coefficients are fitted with the Arrhenius equation to compare
+              activation energies, while structural, energetic, and lower-cost
+              diffusion properties are evaluated as practical screening criteria.
             </p>
             <div class="project-links">
               <a href="https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002480/v1"
@@ -211,9 +279,26 @@
               </a>
             </div>
 
+            <h3>Research themes</h3>
+            <ul>
+              <li>uMLIP benchmarking for solid-state lithium materials</li>
+              <li>Arrhenius activation energies from MD and PFG-NMR diffusion</li>
+              <li>Low-cost structural, energetic, and diffusion screening</li>
+            </ul>
+            <h3>Research direction</h3>
+            <p>
+              The broader goal is to determine when inexpensive computational
+              proxies can reliably identify materials for more demanding
+              diffusion studies. MACE- and ORB-based models show strong overall
+              performance, and a Pearson coefficient of 0.69 between mean
+              absolute errors in diffusion-related properties supports a useful
+              link between screening and high-cost transport calculations. The
+              remaining system dependence highlights the need for careful model
+              validation before uMLIPs are used in automated discovery pipelines.
+            </p>
             <p class="small-note">
-              Additional details can cover the model, datasets, benchmarks,
-              findings, and associated code repositories.
+              The preprint provides the full model comparison, datasets,
+              benchmarks, and analysis.
             </p>
           </div>
         </details>
@@ -223,36 +308,66 @@
             <span class="project-index">4</span>
             <span class="project-heading">
               <span class="eyebrow">MAGNETIC RESONANCE · INSTRUMENTATION</span>
-              <span class="project-title">RF Coil / Probe Engineering</span>
+              <span class="project-title">RF Coil and Probe Engineering</span>
               <span class="project-intro">
-                Probing local chemical environments and structural changes
-                in electrochemical materials.
+                Developing compact, homogeneous resonators for advanced
+                solid-state NMR experiments.
               </span>
             </span>
             <span class="expand-icon" aria-hidden="true">+</span>
           </summary>
           <div class="project-details">
-            <figure class="research-figure">
-              <img src="assets/figures/nmr-spectrum.svg" alt="Stylized solid-state NMR spectrum with resonance peaks">
-              <figcaption>Local chemical environments expressed as resonance signals.</figcaption>
-            </figure>
+            <div class="research-gallery probe-gallery">
+              <figure class="research-figure">
+                <img src="assets/figures/probe-design.jpg" alt="Custom solid-state NMR probe and resonator design">
+                <figcaption>Custom resonator geometry for solid-state NMR.</figcaption>
+              </figure>
+              <figure class="research-figure">
+                <img src="assets/figures/probe-setup.jpg" alt="Solid-state NMR probe installed for experimental testing">
+                <figcaption>Probe assembly prepared for experimental characterization.</figcaption>
+              </figure>
+              <figure class="research-figure">
+                <img src="assets/figures/fieldmapping.png" alt="Experimental RF-field map showing resonator homogeneity">
+                <figcaption>Experimental field mapping used to calibrate homogeneity.</figcaption>
+              </figure>
+              <figure class="research-figure">
+                <img src="assets/figures/field-sim.png" alt="Simulated RF magnetic field distribution across a resonator">
+                <figcaption>Calculated RF-field distribution across the sensitive region.</figcaption>
+              </figure>
+            </div>
             <h3>Research overview</h3>
             <p>
-              Solid-state nuclear magnetic resonance (ssNMR) provides a
-              local probe of chemical environments in complex solids.
-              This research area focuses on using NMR spectroscopy to
-              investigate battery materials, local structure, and changes
-              associated with electrochemical processes.
+              RF probe engineering translates spectrometer capabilities into
+              reliable measurements at the sample. Building on resonator
+              designs from our group and collaborators, this work focuses on the
+              practical design of compact probes for solid-state NMR and MRI, with
+              particular attention to resonator form factor, double-resonance
+              operation, and experimental access around electrochemical samples.
             </p>
+            <div class="project-links">
+              <a href="https://doi.org/10.1016/j.mrl.2023.01.002"
+                 target="_blank" rel="noopener noreferrer">Background paper 1 ↗</a>
+              <a href="https://doi.org/10.1016/j.carbon.2021.12.082"
+                 target="_blank" rel="noopener noreferrer">Background paper 2 ↗</a>
+            </div>
             <h3>Research themes</h3>
             <ul>
-              <li>Local atomic structure and chemical environments</li>
-              <li>NMR characterization of battery materials</li>
-              <li>Structural changes during electrochemical processes</li>
+              <li>Resonator form factor and sample access</li>
+              <li>Double-resonance coil and probe capabilities</li>
+              <li>RF-field calculations, mapping, and homogeneity</li>
             </ul>
+            <h3>Research direction</h3>
+            <p>
+              The design process combines electromagnetic field calculations
+              with experimental field mapping to identify and correct sources
+              of inhomogeneity. The aim is to build probes that balance compact
+              geometry, multi-frequency performance, and a uniform sensitive
+              volume for demanding ssNMR and MRI studies.
+            </p>
             <p class="small-note">
-              Specific nuclei, techniques, battery chemistries, results,
-              and publications can be added here.
+              The cited papers provide background for the resonator-design
+              context; the form-factor, double-resonance, and homogeneity
+              improvements define the current contribution.
             </p>
           </div>
         </details>
@@ -483,6 +598,105 @@
       </div>
     </section>
   </main>
+
+  <script>
+    document.querySelectorAll(".research-figure img, .toc-figure img, .hero-portrait img").forEach((image) => {
+      image.setAttribute("tabindex", "0");
+
+      const openViewer = () => {
+        const scrollPosition = window.scrollY;
+        const dialog = document.createElement("dialog");
+        const enlargedImage = document.createElement("img");
+        const closeButton = document.createElement("button");
+        const navigation = document.createElement("div");
+        const backButton = document.createElement("button");
+        const forwardButton = document.createElement("button");
+        const gallery = image.closest(".research-gallery");
+        const galleryImages = gallery
+          ? Array.from(gallery.querySelectorAll("img"))
+          : [image];
+        let currentIndex = galleryImages.indexOf(image);
+
+        dialog.className = "image-viewer";
+        dialog.style.position = "absolute";
+        dialog.style.top = `${scrollPosition + 24}px`;
+        dialog.style.left = "0";
+        dialog.style.margin = "0";
+        dialog.setAttribute("aria-label", "Enlarged image viewer");
+        dialog.tabIndex = -1;
+        enlargedImage.alt = image.alt;
+        closeButton.className = "image-viewer-close";
+        closeButton.type = "button";
+        closeButton.setAttribute("aria-label", "Close enlarged image");
+        closeButton.textContent = "×";
+        navigation.className = "image-viewer-nav";
+        backButton.type = "button";
+        backButton.setAttribute("aria-label", "Previous image");
+        backButton.textContent = "←";
+        forwardButton.type = "button";
+        forwardButton.setAttribute("aria-label", "Next image");
+        forwardButton.textContent = "→";
+        navigation.hidden = galleryImages.length < 2;
+        navigation.append(backButton, forwardButton);
+        dialog.append(closeButton, navigation, enlargedImage);
+        document.body.append(dialog);
+
+        const centerViewer = () => {
+          dialog.style.left = `${Math.max(16, (window.innerWidth - dialog.offsetWidth) / 2)}px`;
+        };
+        enlargedImage.addEventListener("load", centerViewer);
+
+        const updateViewer = () => {
+          const selectedImage = galleryImages[currentIndex];
+          enlargedImage.src = selectedImage.currentSrc || selectedImage.src;
+          enlargedImage.alt = selectedImage.alt;
+          centerViewer();
+          backButton.disabled = currentIndex === 0;
+          forwardButton.disabled = currentIndex === galleryImages.length - 1;
+          backButton.hidden = currentIndex === 0;
+          forwardButton.hidden = currentIndex === galleryImages.length - 1;
+        };
+
+        backButton.addEventListener("click", () => {
+          if (currentIndex > 0) {
+            currentIndex -= 1;
+            updateViewer();
+          }
+        });
+        forwardButton.addEventListener("click", () => {
+          if (currentIndex < galleryImages.length - 1) {
+            currentIndex += 1;
+            updateViewer();
+          }
+        });
+        dialog.addEventListener("close", () => {
+          dialog.remove();
+          window.scrollTo(0, scrollPosition);
+        }, { once: true });
+        dialog.addEventListener("click", (event) => {
+          if (event.target === dialog) dialog.close();
+        });
+        dialog.addEventListener("keydown", (event) => {
+          if (event.key === "ArrowLeft") backButton.click();
+          if (event.key === "ArrowRight") forwardButton.click();
+        });
+        closeButton.addEventListener("click", () => dialog.close());
+        updateViewer();
+        dialog.showModal();
+        centerViewer();
+        dialog.focus({ preventScroll: true });
+        window.scrollTo(0, scrollPosition);
+      };
+
+      image.addEventListener("click", openViewer);
+      image.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openViewer();
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
