@@ -395,7 +395,7 @@ h2 {
 }
 
 .project-details p, .project-details li {
-  color: #566159;
+  color: var(--muted);
   font-size: 16px;
   text-shadow: 0 0 6px rgba(255, 255, 255, .9);
   text-align: justify;
