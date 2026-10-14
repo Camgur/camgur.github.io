@@ -9,7 +9,7 @@
   --blue-soft: #dbeef0;
   --bright: #ffffff;
   --serif: "Iowan Old Style", "Baskerville", Georgia, serif;
-  --sans: "Avenir Next", "Helvetica Neue", Helvetica, sans-serif;
+  --sans: "Calibri", "Helvetica Neue", Helvetica, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -564,7 +564,7 @@ h2 {
   max-width: 780px;
   padding: 0 0 18px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 18px;
   text-align: justify;
   text-justify: inter-word;
 }
