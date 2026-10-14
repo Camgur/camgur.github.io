@@ -275,7 +275,7 @@ h1, h2 {
 .award-list,
 .coursework-table-wrap,
 .teaching-list {
-  box-shadow: 0 0 22px rgba(255, 255, 255, .24);
+  box-shadow: 0 0 0px rgba(255, 255, 255, .4);
 }
 
 .section-heading {
@@ -305,7 +305,7 @@ h2 {
 }
 
 .project {
-  background: rgba(255, 255, 255, .32);
+  background: rgba(255, 255, 255, .4);
   border-bottom: 1px solid var(--line);
 }
 
@@ -417,7 +417,8 @@ h2 {
 .publication {
   max-width: 820px;
   padding: 32px 0;
-  background: rgba(255, 255, 255, .32);
+  background: rgba(255, 255, 255, .4);
+  background-clip: border-box;
   border-top: 1px solid var(--line);
 }
 
@@ -597,7 +598,7 @@ h2 {
 }
 
 .presentation-list {
-  background: rgba(255, 255, 255, .32);
+  background: rgba(255, 255, 255, .4);
   border-top: 1px solid var(--line);
 }
 
@@ -635,7 +636,7 @@ h2 {
 
 .award-list {
   max-width: 820px;
-  background: rgba(255, 255, 255, .32);
+  background: rgba(255, 255, 255, .4);
 }
 
 .award-header {
@@ -688,7 +689,7 @@ h2 {
 
 .teaching-list {
   max-width: 820px;
-  background: rgba(255, 255, 255, .32);
+  background: rgba(255, 255, 255, .4);
 }
 
 .teaching-item {
@@ -728,7 +729,7 @@ h2 {
 
 .coursework-table-wrap {
   max-width: 820px;
-  background: rgba(255, 255, 255, .32);
+  background: rgba(255, 255, 255, .4);
   overflow-x: auto;
 }
 
