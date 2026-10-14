@@ -6,7 +6,7 @@
   <meta name="description" content="Cameron Alexander McCord Gurwell, a researcher at McMaster University. Research in solid-state NMR, battery spectroscopy, MRI, and universal machine-learning interatomic potentials.">
   <meta name="theme-color" content="#faf9f5">
   <title>Cameron A. Gurwell | Research</title>
-  <link rel="stylesheet" href="assets/css/style.css?v=20261015-1">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261015-2">
 </head>
 <body>
   <header class="site-header">
@@ -30,7 +30,7 @@
         <p class="eyebrow">NMR Spectroscopy · MR Imaging · Computational Chemistry</p>
         <p class="hero-copy">
           I am Cameron Alexander McCord Gurwell, a researcher at McMaster
-          University originally from Boston and now based in Hamilton, Ontario.
+          University, originally from Boston and now based in Hamilton, Ontario.
           I received my undergraduate degree in Chemistry from McMaster in 2025
           and am pursuing an M.Sc. studying how local structure governs ion
           motion in energy-storage materials. My work combines solid-state NMR,
@@ -597,10 +597,84 @@
         </table>
       </div>
     </section>
+
+    <section class="section photo-gallery-section" id="photo-gallery">
+      <div class="section-heading">
+        <div>
+          <h2>Photo Gallery</h2>
+        </div>
+        <p class="small-note">Selected moments from the labs and various conferences.</p>
+      </div>
+
+      <div class="photo-gallery" aria-label="Photo gallery">
+        <figure>
+          <img src="assets/photo-gallery/goward-group-magnet.jpg" alt="The Goward group with an NMR magnet">
+        </figure>
+        <figure>
+          <img src="assets/photo-gallery/magnet-850.png" alt="The 850 megahertz NMR magnet">
+        </figure>
+        <figure>
+          <img src="assets/photo-gallery/magnet-850-maintaining.jpg" alt="Maintaining the 850 megahertz NMR magnet">
+        </figure>
+        <figure>
+          <img src="assets/photo-gallery/magnet-300.jpg" alt="The 300 megahertz NMR magnet">
+        </figure>
+        <figure>
+          <img src="assets/photo-gallery/magnet-300-maintaining.jpg" alt="Maintaining the 300 megahertz NMR magnet">
+        </figure>
+        <figure>
+          <img src="assets/photo-gallery/csc-2026-talk.jpg" alt="Cameron presenting at the 2026 Canadian Chemistry Conference">
+        </figure>
+        <figure>
+          <img src="assets/photo-gallery/csc-2026-toronto.jpg" alt="Cameron at the 2026 Canadian Chemistry Conference in Toronto">
+        </figure>
+        <figure>
+          <img src="assets/photo-gallery/csc-2026.jpg" alt="Group photo from the 2026 Canadian Chemistry Conference">
+        </figure>
+        <figure>
+          <img src="assets/photo-gallery/graduation-2025.jpg" alt="Cameron at his 2025 graduation">
+        </figure>
+        <figure>
+          <img src="assets/photo-gallery/graduation-2025-goward.jpg" alt="Cameron with the Goward group at graduation in 2025">
+        </figure>
+        <figure>
+          <img src="assets/photo-gallery/thesis-2025.jpg" alt="Cameron with his undergraduate thesis award in 2025">
+        </figure>
+        <figure>
+          <img src="assets/photo-gallery/may-2025.jpg" alt="Cameron in May 2025">
+        </figure>
+        <figure>
+          <img src="assets/photo-gallery/vargas-hernandez-2025.jpg" alt="Cameron with Rodrigo Vargas-Hernandez in 2025">
+        </figure>
+        <figure>
+          <img src="assets/photo-gallery/goward-group-summer-2025.jpg" alt="The Goward group during summer 2025">
+        </figure>
+        <figure>
+          <img src="assets/photo-gallery/winnipeg-csc-2024.jpg" alt="Cameron at the 2024 Canadian Chemistry Conference in Winnipeg">
+        </figure>
+        <figure>
+          <img src="assets/photo-gallery/winnipeg-csc-poster-2024.jpg" alt="Cameron presenting a poster at the 2024 Canadian Chemistry Conference">
+        </figure>
+        <figure>
+          <img src="assets/photo-gallery/winnipeg-csc-lunch-2024.jpg" alt="Lunch with colleagues at the 2024 Canadian Chemistry Conference">
+        </figure>
+        <figure>
+          <img src="assets/photo-gallery/goward-group-2024.jpg" alt="The Goward group in 2024">
+        </figure>
+        <figure>
+          <img src="assets/photo-gallery/goward-group-jan-2024.jpg" alt="The Goward group in January 2024">
+        </figure>
+        <figure>
+          <img src="assets/photo-gallery/goward-group-summer-2023.jpg" alt="The Goward group during summer 2023">
+        </figure>
+      </div>
+    </section>
   </main>
 
+  <button class="back-to-top" type="button" aria-label="Return to top" title="Return to top">↑</button>
+
   <script>
-    document.querySelectorAll(".research-figure img, .toc-figure img, .hero-portrait img").forEach((image) => {
+    document.querySelectorAll(".research-figure img, .toc-figure img, .hero-portrait img, .photo-gallery img").forEach((image) => {
       image.setAttribute("tabindex", "0");
 
       const openViewer = () => {
@@ -611,7 +685,7 @@
         const navigation = document.createElement("div");
         const backButton = document.createElement("button");
         const forwardButton = document.createElement("button");
-        const gallery = image.closest(".research-gallery");
+        const gallery = image.closest(".research-gallery, .photo-gallery");
         const galleryImages = gallery
           ? Array.from(gallery.querySelectorAll("img"))
           : [image];
@@ -696,6 +770,15 @@
         }
       });
     });
+
+    const backToTop = document.querySelector(".back-to-top");
+    const updateBackToTop = () => {
+      backToTop.classList.toggle("is-visible", window.scrollY > 500);
+    };
+
+    window.addEventListener("scroll", updateBackToTop, { passive: true });
+    backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+    updateBackToTop();
   </script>
 
 </body>
