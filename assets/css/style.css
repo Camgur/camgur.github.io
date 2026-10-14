@@ -815,6 +815,8 @@ h2 {
 }
 
 @media (max-width: 760px) {
+  body { background-attachment: scroll; }
+
   .site-header {
     align-items: flex-start;
     flex-direction: column;
