@@ -2847,64 +2847,56 @@ html {
 }
 
 /* ========================================================================
-   Mobile background-gradient correction
+   Background behavior — restore desktop, keep mobile stable for now
    ======================================================================== */
 
-/* On narrow viewports, reduce the radial fade distances in proportion to the
-   viewport width. This keeps the blue and orange accents separated and
-   preserves the calmer desktop balance instead of letting the two washes
-   overlap and intensify on phones. Desktop values remain unchanged. */
-@media (max-width: 760px) {
+/* Desktop: restore the established viewport-fixed background behavior.
+   Keep the stronger blue/orange accent washes from the recent revision. */
+@media (min-width: 761px) {
   body {
+    background-color: var(--paper) !important;
     background-image:
-      radial-gradient(ellipse at 3% 5%, rgba(41, 183, 207, .12), transparent 44vw),
-      radial-gradient(ellipse at 98% 9%, rgba(244, 119, 50, .10), transparent 42vw),
+      radial-gradient(ellipse at 3% 5%, rgba(41, 183, 207, .18), transparent 34rem),
+      radial-gradient(ellipse at 98% 9%, rgba(244, 119, 50, .15), transparent 32rem),
       linear-gradient(rgba(250, 250, 247, .91), rgba(250, 250, 247, .96)),
-      url("../background.png");
+      url("../background.png") !important;
+    background-position: left top, right top, center top, center top !important;
+    background-size: auto, auto, auto, cover !important;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat !important;
+    background-attachment: fixed !important;
+  }
+
+  body::before {
+    content: none !important;
+    display: none !important;
   }
 }
 
-
-/* ========================================================================
-   Mobile page-scrolling background
-   ======================================================================== */
-
+/* Mobile: leave the background stationary while scrolling for now. The artwork
+   stays scaled to the viewport height and can tile if its aspect ratio calls
+   for it. This intentionally avoids the document-height zoom from earlier
+   attempts. */
 @media (max-width: 760px) {
-  /* Keep the root canvas plain so the mobile artwork is not promoted to a
-     viewport/canvas background by browser-specific body-background rules. */
   html {
     background-color: var(--paper) !important;
+    background-image: none !important;
   }
 
   body {
-    position: relative;
-    isolation: isolate;
     background-color: var(--paper) !important;
-    background-image: none !important;
-    background-attachment: scroll !important;
+    background-image:
+      radial-gradient(ellipse at 3% 5%, rgba(41, 183, 207, .18), transparent 44vw),
+      radial-gradient(ellipse at 98% 9%, rgba(244, 119, 50, .15), transparent 42vw),
+      linear-gradient(rgba(250, 250, 247, .88), rgba(250, 250, 247, .94)),
+      url("../background.png") !important;
+    background-position: left top, right top, center top, center top !important;
+    background-size: auto, auto, auto, auto 100lvh !important;
+    background-repeat: no-repeat, no-repeat, no-repeat, repeat !important;
+    background-attachment: fixed !important;
   }
 
-  /* This layer lives at the top of the document (not fixed to the viewport),
-     is exactly one mobile viewport tall, and therefore moves with scrollY. */
   body::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    right: 0;
-    left: 0;
-    display: block;
-    height: 100vh;
-    height: 100svh;
-    pointer-events: none;
-    background-image:
-      radial-gradient(ellipse at 3% 5%, rgba(41, 183, 207, .12), transparent 44vw),
-      radial-gradient(ellipse at 98% 9%, rgba(244, 119, 50, .10), transparent 42vw),
-      linear-gradient(rgba(250, 250, 247, .91), rgba(250, 250, 247, .96)),
-      url("../background.png");
-    background-position: left top, right top, center top, center top;
-    background-size: 100% 100%, 100% 100%, 100% 100%, auto 100vh;
-    background-size: 100% 100%, 100% 100%, 100% 100%, auto 100svh;
-    background-repeat: no-repeat;
+    content: none !important;
+    display: none !important;
   }
 }
