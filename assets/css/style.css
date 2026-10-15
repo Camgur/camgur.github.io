@@ -166,7 +166,7 @@ h1 {
 .hero-portrait figcaption {
   padding-top: 15px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.5;
   text-align: center;
   letter-spacing: .045em;
@@ -2843,5 +2843,23 @@ html {
 @media (max-width: 560px) {
   .abstract-details summary::after {
     right: 15px;
+  }
+}
+
+/* ========================================================================
+   Mobile background-gradient correction
+   ======================================================================== */
+
+/* On narrow viewports, reduce the radial fade distances in proportion to the
+   viewport width. This keeps the blue and orange accents separated and
+   preserves the calmer desktop balance instead of letting the two washes
+   overlap and intensify on phones. Desktop values remain unchanged. */
+@media (max-width: 760px) {
+  body {
+    background-image:
+      radial-gradient(ellipse at 3% 5%, rgba(41, 183, 207, .12), transparent 44vw),
+      radial-gradient(ellipse at 98% 9%, rgba(244, 119, 50, .10), transparent 42vw),
+      linear-gradient(rgba(250, 250, 247, .91), rgba(250, 250, 247, .96)),
+      url("../background.png");
   }
 }

@@ -166,7 +166,7 @@ h1 {
 .hero-portrait figcaption {
   padding-top: 15px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.5;
   text-align: center;
   letter-spacing: .045em;
@@ -2766,8 +2766,6 @@ h3, h4 {
   }
 }
 
-/* Final fix: keep the abstract's open-state fill circular.  The circle is
-   exclusively ::before; ::after contains only the animated plus/cross strokes. */
 .abstract-details[open] > summary::before {
   display: block !important;
   width: 30px !important;
@@ -2811,20 +2809,9 @@ h3, h4 {
     flex-basis: 28px !important;
   }
 }
-
-
-/* ========================================================================
-   Abstract disclosure direction — keep content in normal downward flow
-   ======================================================================== */
-
-/* Disable viewport scroll anchoring so the browser does not compensate for
-   the animated height change by shifting the page and making the abstract
-   appear to expand upward. */
 html {
   overflow-anchor: none;
 }
-
-/* Keep the native details panel in document flow below its summary. */
 .abstract-details {
   position: static;
   inset: auto;
@@ -2834,5 +2821,11 @@ html {
   .abstract-details::details-content {
     position: static !important;
     inset: auto !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .abstract-details summary::after {
+    right: 15px;
   }
 }
