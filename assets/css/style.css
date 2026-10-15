@@ -2870,20 +2870,41 @@ html {
    ======================================================================== */
 
 @media (max-width: 760px) {
-  /* Keep the root canvas separate so the body's background scrolls with the
-     document instead of being promoted to a viewport-fixed canvas background. */
+  /* Keep the root canvas plain so the mobile artwork is not promoted to a
+     viewport/canvas background by browser-specific body-background rules. */
   html {
-    background-color: var(--paper);
+    background-color: var(--paper) !important;
   }
 
   body {
+    position: relative;
+    isolation: isolate;
+    background-color: var(--paper) !important;
+    background-image: none !important;
     background-attachment: scroll !important;
-    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat !important;
-    background-position: left top, right top, center top, center top !important;
-    /* The source image must size against the phone viewport, not the body's
-       full document height. Preserve its aspect ratio and let it scroll away
-       with the page. The 100vh declaration is a fallback for older browsers. */
-    background-size: auto, auto, auto, auto 100vh !important;
-    background-size: auto, auto, auto, auto 100svh !important;
+  }
+
+  /* This layer lives at the top of the document (not fixed to the viewport),
+     is exactly one mobile viewport tall, and therefore moves with scrollY. */
+  body::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: block;
+    height: 100vh;
+    height: 100svh;
+    pointer-events: none;
+    background-image:
+      radial-gradient(ellipse at 3% 5%, rgba(41, 183, 207, .12), transparent 44vw),
+      radial-gradient(ellipse at 98% 9%, rgba(244, 119, 50, .10), transparent 42vw),
+      linear-gradient(rgba(250, 250, 247, .91), rgba(250, 250, 247, .96)),
+      url("../background.png");
+    background-position: left top, right top, center top, center top;
+    background-size: 100% 100%, 100% 100%, 100% 100%, auto 100vh;
+    background-size: 100% 100%, 100% 100%, 100% 100%, auto 100svh;
+    background-repeat: no-repeat;
   }
 }
