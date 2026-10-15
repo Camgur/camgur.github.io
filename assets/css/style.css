@@ -166,7 +166,7 @@ h1 {
 .hero-portrait figcaption {
   padding-top: 15px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.5;
   text-align: center;
   letter-spacing: .045em;
@@ -2834,5 +2834,14 @@ html {
   .abstract-details::details-content {
     position: static !important;
     inset: auto !important;
+  }
+}
+
+/* Mobile alignment fix: the summary padding narrows from 20px to 15px,
+   so move the absolutely positioned abstract glyph to the same inset as its
+   flex-positioned circle. This keeps the animated +/× exactly centred. */
+@media (max-width: 560px) {
+  .abstract-details summary::after {
+    right: 15px;
   }
 }
