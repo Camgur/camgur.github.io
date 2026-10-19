@@ -299,7 +299,7 @@ h1 {
 .presentation-list,
 .award-list,
 .coursework-table-wrap,
-.teaching-list {
+.table-list {
   box-shadow: 0 8px 28px rgba(23, 59, 89, .035);
 }
 .section-heading {
@@ -652,11 +652,11 @@ h2 {
   text-transform: uppercase;
   white-space: nowrap;
 }
-.teaching-list {
+.table-list {
   max-width: 820px;
   background: rgba(255, 253, 249, .62);
 }
-.teaching-item {
+.table-item {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: baseline;
@@ -664,19 +664,19 @@ h2 {
   padding: 15px 12px;
   border-top: 1px solid var(--line);
 }
-.teaching-item h3 {
+.table-item h3 {
   margin: 0;
   color: var(--deep);
   font: 650 16px/1.5 var(--sans);
 }
-.teaching-item h3 a {
+.table-item h3 a {
   text-decoration: none;
 }
-.teaching-item h3 a:hover,
-.teaching-item h3 a:focus-visible {
+.table-item h3 a:hover,
+.table-item h3 a:focus-visible {
   color: var(--link);
 }
-.teaching-item p {
+.table-item p {
   margin: 0;
   color: var(--link);
   font-size: 11px;
@@ -1036,10 +1036,6 @@ h2 {
   *, *::before, *::after { transition: none !important; }
   .project-details { animation: none; }
 }
-
-/* ========================================================================
-   DESIGN LAYER — editorial, high-contrast, cyan-to-orange accents
-   ======================================================================== */
 
 :root {
   color-scheme: light;
@@ -1587,7 +1583,7 @@ h3, h4 {
 
 .presentation-list,
 .award-list,
-.teaching-list,
+.table-list,
 .coursework-table-wrap {
   overflow: hidden;
   border: 1px solid rgba(208, 224, 229, .95);
@@ -1609,7 +1605,7 @@ h3, h4 {
 }
 
 .award-list,
-.teaching-list { max-width: 100%; }
+.table-list { max-width: 100%; }
 
 .award-header {
   border-top: 0;
@@ -1617,20 +1613,20 @@ h3, h4 {
 }
 
 .award-item,
-.teaching-item {
+.table-item {
   padding: 17px 18px;
   gap: 18px;
   border-top: 1px solid #e2ebed;
 }
 
 .award-item h3,
-.teaching-item h3 {
+.table-item h3 {
   font-size: 15px;
   line-height: 1.6;
 }
 
 .award-item p,
-.teaching-item p {
+.table-item p {
   color: #0d718d;
   font-size: 10px;
   letter-spacing: .11em;
@@ -1819,9 +1815,9 @@ h3, h4 {
   .presentation-list { padding: 0 16px; }
   .presentation-item h4 { font-size: 20px; }
   .award-item,
-  .teaching-item { grid-template-columns: minmax(0, 1fr); gap: 2px; padding: 14px; }
+  .table-item { grid-template-columns: minmax(0, 1fr); gap: 2px; padding: 14px; }
   .award-item p,
-  .teaching-item p { text-align: left; white-space: normal; }
+  .table-item p { text-align: left; white-space: normal; }
   .award-header { gap: 12px; padding: 13px 14px; font-size: 9px; }
   .coursework-table { min-width: 480px; font-size: 14px; }
   .coursework-table th,
@@ -1840,18 +1836,11 @@ h3, h4 {
   }
 }
 
-/* ========================================================================
-   Unified disclosures — shared rollout, icon motion, and link affordances
-   ======================================================================== */
-
-/* Prevent scroll anchoring from pulling the page upward while long disclosures open. */
 .project,
 .abstract-details {
   overflow-anchor: none;
 }
 
-/* Use the same actual height rollout for both disclosure types where supported.
-   interpolate-size lets block-size transition smoothly between 0 and auto. */
 @supports selector(details::details-content) {
   details::details-content {
     display: block;
@@ -2005,8 +1994,6 @@ h3, h4 {
   outline-offset: -3px;
 }
 
-/* One pseudo-element draws both the circular frame and centred plus/cross.
-   Keeping the border and glyph on the same box prevents alignment drift. */
 .abstract-details summary::before {
   content: none;
   display: none;
@@ -2061,9 +2048,6 @@ h3, h4 {
   transform: rotate(45deg);
 }
 
-/* Fade/slide the inner content in while the details-content pseudo-element above
-   animates the available height down the page. Research remains a single wrapper;
-   abstracts animate their figure and paragraph with the same timing. */
 .project-details,
 .abstract-details > :not(summary) {
   opacity: 0;
@@ -2097,7 +2081,7 @@ h3, h4 {
 }
 
 /* Teaching titles read as links on hover and keyboard focus. */
-.teaching-item h3 a {
+.table-item h3 a {
   color: var(--deep);
   text-decoration: underline;
   text-decoration-color: transparent;
@@ -2110,8 +2094,8 @@ h3, h4 {
     background-color .18s ease;
 }
 
-.teaching-item h3 a:hover,
-.teaching-item h3 a:focus-visible {
+.table-item h3 a:hover,
+.table-item h3 a:focus-visible {
   color: var(--link);
   text-decoration-color: var(--accent);
   background: linear-gradient(
@@ -2121,7 +2105,7 @@ h3, h4 {
   );
 }
 
-.teaching-item h3 a:focus-visible {
+.table-item h3 a:focus-visible {
   outline: 2px solid var(--portrait-blue);
   outline-offset: 3px;
 }
@@ -2174,7 +2158,7 @@ h3, h4 {
   .abstract-details,
   .abstract-details summary,
   .abstract-details summary::after,
-  .teaching-item h3 a {
+  .table-item h3 a {
     transition: none !important;
   }
 
@@ -2194,21 +2178,12 @@ h3, h4 {
   }
 }
 
-/* ========================================================================
-   Final polish — consistent disclosure reveal and coordinated hover wash
-   ======================================================================== */
-
-/* Keep child margins inside the animated disclosure box.
-   This prevents abstract figures/paragraphs from being clipped at the end
-   of the rollout when their vertical margins would otherwise collapse. */
 @supports selector(details::details-content) {
   details::details-content {
     display: flow-root;
   }
 }
 
-/* When a disclosure heading is hovered, carry the same cool-to-warm wash
-   through its expanded content, not just across the clickable summary row. */
 .project:has(> summary:hover),
 .project:has(> summary:focus-visible) {
   background: var(--gradient-cool);
@@ -2219,7 +2194,6 @@ h3, h4 {
   background: var(--gradient-cool);
 }
 
-/* Let the publication's gradient show through the whole abstract area. */
 .abstract-details {
   background: rgba(255, 254, 250, .9);
   transition:
@@ -2233,8 +2207,6 @@ h3, h4 {
   background: var(--gradient-cool);
 }
 
-/* Keep the abstract's last child inside the animated box, with a reliable
-   bottom inset matching the research-detail content spacing. */
 .abstract-details > p:last-child {
   margin-bottom: 0;
   padding: 0 20px 24px;
@@ -2256,12 +2228,7 @@ h3, h4 {
   }
 }
 
-/* ========================================================================
-   Final consistency pass — visible blue/orange hover and matching open icons
-   ======================================================================== */
-
 :root {
-  /* A more legible cool-to-warm wash: blue on the left, warm orange on the right. */
   --gradient-hover: linear-gradient(
     108deg,
     #e2f6f9 0%,
@@ -2271,7 +2238,6 @@ h3, h4 {
   );
 }
 
-/* Apply the same perceptible blue-to-orange wash to each clickable heading. */
 .project summary:hover,
 .project summary:focus-visible,
 .abstract-details summary:hover,
@@ -2279,7 +2245,6 @@ h3, h4 {
   background: var(--gradient-hover);
 }
 
-/* Keep the highlight visible through the complete expanded card, too. */
 .project:has(> summary:hover),
 .project:has(> summary:focus-visible),
 .abstract-details:has(> summary:hover),
@@ -2292,8 +2257,6 @@ h3, h4 {
   background: transparent;
 }
 
-/* Match the open research icon exactly: a stationary gradient circle, with
-   only the plus/cross strokes changing orientation. */
 .abstract-details summary::before {
   content: "";
   order: 1;
@@ -2379,13 +2342,6 @@ h3, h4 {
   }
 }
 
-/* ========================================================================
-   Final consistency fix — visible blue/orange hover and identical open icons
-   ======================================================================== */
-
-/* Use an explicit two-colour gradient for the expanded card surfaces.
-   The earlier cool-only gradient was predominantly blue, making the orange
-   accent too subtle on large content areas. */
 :root {
   --disclosure-hover-gradient:
     linear-gradient(
@@ -2410,9 +2366,6 @@ h3, h4 {
   background: var(--disclosure-hover-gradient);
 }
 
-/* Make the expanded icon backgrounds identical in both sections.
-   The research icon's two bars sit above this gradient circle; publications
-   use the same gradient and geometry for their circle. */
 .project[open] summary .expand-icon {
   color: #fff;
   border-color: transparent;
@@ -2435,19 +2388,11 @@ h3, h4 {
   transform: rotate(45deg);
 }
 
-/* The open-state gradient circle is intentionally identical: no separate
-   cool-only fill or alternate background layer for either disclosure type. */
 .project[open] summary .expand-icon,
 .abstract-details[open] > summary::after {
   background-color: transparent;
 }
 
-/* ========================================================================
-   Definitive disclosure hover/icon correction
-   ======================================================================== */
-
-/* Use one fully opaque, shared wash for the complete disclosure card.
-   Reusing --gradient-hover keeps the expanded region and its heading in sync. */
 :root {
   --disclosure-hover-gradient: var(--gradient-hover);
 }
@@ -2463,8 +2408,6 @@ h3, h4 {
   background: var(--gradient-hover);
 }
 
-/* Let the shared card gradient show continuously behind both the summary and
-   its expanded content, rather than layering a second gradient on the row. */
 .project summary:hover,
 .project summary:focus-visible,
 .abstract-details summary:hover,
@@ -2477,8 +2420,6 @@ h3, h4 {
   background-color: transparent;
 }
 
-/* The abstract control must be a single circle-and-glyph, not two stacked
-   pseudo-element circles. The one remaining box is also the glyph's centre. */
 .abstract-details summary::before {
   content: none !important;
   display: none !important;
@@ -2544,12 +2485,6 @@ h3, h4 {
   }
 }
 
-/* ========================================================================
-   Final interaction polish — hover clears correctly; disclosure icons match
-   ======================================================================== */
-
-/* Only pointer hover should apply the card-wide wash. Keyboard focus keeps its
-   visible outline, but must not leave the colour wash behind after mouseout. */
 .project:has(> summary:focus-visible):not(:hover),
 .abstract-details:has(> summary:focus-visible):not(:hover) {
   background: rgba(255, 254, 250, .88);
@@ -2562,8 +2497,6 @@ h3, h4 {
   background: rgba(255, 254, 250, .97);
 }
 
-/* Pointer hover is the only state that applies the complete blue-to-orange
-   wash. Since it is opaque, it stays consistent across the heading/content. */
 .project:has(> summary:hover),
 .project[open]:hover,
 .abstract-details:has(> summary:hover),
@@ -2583,8 +2516,6 @@ h3, h4 {
   background-color: transparent;
 }
 
-/* Both circular icon boxes are exactly 30 × 30 px including their border.
-   Keep the research background stationary and rotate only its two CSS strokes. */
 .project summary .expand-icon {
   box-sizing: border-box;
   flex: 0 0 30px;
@@ -2612,8 +2543,6 @@ h3, h4 {
   transform: translate(-50%, -50%) rotate(45deg);
 }
 
-/* Abstracts use one pseudo-element for both the circle and the glyph. Switch
-   + to × when open instead of rotating the whole box (which rotated its fill). */
 .abstract-details summary::before {
   content: none !important;
   display: none !important;
@@ -2672,8 +2601,6 @@ h3, h4 {
   }
 }
 
-/* Focused fix: restore the abstract icon's animated, centred plus/cross.
-   The circle stays stationary; only the two-stroke glyph rotates, as in research. */
 .abstract-details summary {
   position: relative;
 }
@@ -2766,8 +2693,6 @@ h3, h4 {
   }
 }
 
-/* Final fix: keep the abstract's open-state fill circular.  The circle is
-   exclusively ::before; ::after contains only the animated plus/cross strokes. */
 .abstract-details[open] > summary::before {
   display: block !important;
   width: 30px !important;
@@ -2812,14 +2737,6 @@ h3, h4 {
   }
 }
 
-
-/* ========================================================================
-   Abstract disclosure direction — keep content in normal downward flow
-   ======================================================================== */
-
-/* Disable viewport scroll anchoring so the browser does not compensate for
-   the animated height change by shifting the page and making the abstract
-   appear to expand upward. */
 html {
   overflow-anchor: none;
 }
@@ -2837,21 +2754,12 @@ html {
   }
 }
 
-/* Mobile alignment fix: the summary padding narrows from 20px to 15px,
-   so move the absolutely positioned abstract glyph to the same inset as its
-   flex-positioned circle. This keeps the animated +/× exactly centred. */
 @media (max-width: 560px) {
   .abstract-details summary::after {
     right: 15px;
   }
 }
 
-/* ========================================================================
-   Background behavior — restore desktop, keep mobile stable for now
-   ======================================================================== */
-
-/* Desktop: restore the established viewport-fixed background behavior.
-   Keep the stronger blue/orange accent washes from the recent revision. */
 @media (min-width: 761px) {
   body {
     background-color: var(--paper) !important;
@@ -2872,10 +2780,6 @@ html {
   }
 }
 
-/* Mobile: leave the background stationary while scrolling for now. The artwork
-   stays scaled to the viewport height and can tile if its aspect ratio calls
-   for it. This intentionally avoids the document-height zoom from earlier
-   attempts. */
 @media (max-width: 760px) {
   html {
     background-color: var(--paper) !important;
